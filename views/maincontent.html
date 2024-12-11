@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Task Manager</title>
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/statistics.css" rel="stylesheet">
+    <link href="../assets/css/profileMaincontent.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Enhanced Sidebar -->
+            <div class="sidebar">
+                <div class="logo mb-4">
+                    <i class="fas fa-tasks fa-2x mb-2"></i>
+                    <h3>Task Manager</h3>
+                </div>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="maincontent.html">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                    <a class="nav-link" href="tasks.html">
+                        <i class="fas fa-list-ul"></i> Tasks
+                    </a>
+                    <a class="nav-link" href="create-task.html">
+                        <i class="fas fa-plus-circle"></i> New Task
+                    </a>
+                    <a class="nav-link" href="profile.html">
+                        <i class="fas fa-user-circle"></i> Profile
+                    </a>
+                    <a class="nav-link" href="#" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <!-- Top Bar -->
+                <div class="top-bar">
+                    <h1 class="page-title">Dashboard</h1>
+                    <div id="welcomeMessage" class="welcome-message"></div>
+                    <div class="notification-bell-container">
+                        <div class="notification-bell" id="notificationBell">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge" id="notificationCount">3</span>
+                        </div>
+                    </div>
+                    <!-- Profile Image Holder -->
+                    <div class="profile-image-holder" id="dashboardProfileImage">
+                        <img src="/placeholder.svg" alt="Profile Picture">
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <div class="statistics-container">
+                        <div class="statistics-header">
+                            <h2>Statistics Overview</h2>
+                        </div>
+                        <div class="statistics-grid">
+                            <!-- Overview Cards -->
+                            <div class="stat-card total-tasks">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3><a href="total-tasks.html">Total Tasks</a></h3>
+                                    <span id="totalTasks" class="stat-number">0</span>
+                                </div>
+                            </div>
+                            <div class="stat-card completion-rate">
+                                <div class="stat-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3><a href="completed_tasks.html">Completion Rate</a></h3> <!-- Updated to link to completed_tasks.html -->
+                                    <span id="completionRate" class="stat-number">0%</span>
+                                </div>
+                            </div>
+                            <div class="stat-card active-tasks">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3><a href="active-tasks.html">Active Tasks</a></h3>
+                                    <span id="activeTasks" class="stat-number">0</span>
+                                </div>
+                            </div>
+                            <div class="stat-card overdue-tasks">
+                                <div class="stat-icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3><a href="overdue-tasks.html">Overdue Tasks</a></h3>
+                                    <span id="overdueTasks" class="stat-number">0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="charts-container">
+                            <div class="chart-card">
+                                <h3>Task Distribution by Priority</h3>
+                                <canvas id="priorityChart"></canvas>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Monthly Task Completion Trends</h3>
+                                <canvas id="trendChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/navigation.js"></script>
+        <script src="../js/statistics.js"></script>
+
+        <script src="../js/TaskStatusHandler.js"></script> <!-- Ensure this is included -->
+        <script src="../js/dashboard-profile.js"></script>
+        <script type="module" src="../js/main.js"></script>
+        <script src="../js/welcome.js"></script>
+        <script src="../js/statisticsData.js"></script>
+        <script src="../js/profile.js"></script>
+    </div>
+</body>
+</html>

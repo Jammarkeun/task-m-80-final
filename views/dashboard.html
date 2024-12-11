@@ -1,0 +1,38 @@
+<link href="../assets/css/style.css" rel="stylesheet">
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo mb-4">
+                <h3 class="text-white">Task Manager</h3>
+            </div>
+            <nav class="nav flex-column">
+                <a class="nav-link" href="maincontent.html">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a class="nav-link" href="tasks.html">
+                    <i class="fas fa-tasks"></i> Tasks
+                </a>
+                <a class="nav-link active" href="create-task.html">
+                    <i class="fas fa-plus"></i> New Task
+                </a>
+                <a class="nav-link" href="profile.html">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a class="nav-link" href="statistics.html">
+                    <i class="fas fa-statistics"></i> Statistics
+                </a>
+                <a class="nav-link" href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new Navigation();
+    });
+</script>
+<script src="../js/navigation.js" defer></script>
+

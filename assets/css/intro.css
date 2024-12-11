@@ -1,0 +1,74 @@
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1e2a78 0%, #ff6b00 100%);
+    color: white;
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Features Section */
+.features {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #ff6b00;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+}
+
+/* Navigation */
+.navbar {
+    background: transparent;
+    padding: 20px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: #1e2a78;
+    position: fixed;
+    animation: fadeInDown 0.5s;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #ff6b00;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #e65c00;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Task</title>
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/create-task.css" rel="stylesheet">
+    <link href="../assets/css/notifications.css" rel="stylesheet">
+    <link href="../assets/css/profileMaincontent.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="logo mb-4">
+                    <i class="fas fa-tasks fa-2x mb-2"></i>
+                    <h3 class="text-white">Task Manager</h3>
+                </div>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="maincontent.html">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                    <a class="nav-link" href="tasks.html">
+                        <i class="fas fa-tasks"></i> Tasks
+                    </a>
+                    <a class="nav-link active" href="create-task.html">
+                        <i class="fas fa-plus"></i> New Task
+                    </a>
+                    <a class="nav-link" href="profile.html">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                    <a class="nav-link" href="#" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="create-task-container">
+                    <div class="create-task-card">
+                        <div class="create-task-header">
+                            <h2>Create New Task</h2>
+                            <button class="back-button" onclick="history.back()">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                        </div>
+                        
+                        <!------NOtification Bell---------->
+                        <div class="notification-bell-container">
+                            <div class="notification-bell" id="notificationBell">
+                                <i class="fas fa-bell"></i>
+                                <span class="notification-badge" id="notificationCount">3</span>
+                            </div>
+                        </div>
+                        <!-- Profile Image Holder -->
+                        <div class="profile-image-holder" id="dashboardProfileImage">
+                            <img src="/placeholder.svg" alt="Profile Picture">
+                        </div>
+                        
+                        <form id="createTaskForm" class="create-task-form">
+                            <!-- Task Title -->
+                            <div class="form-group">
+                                <label for="taskTitle">Task Title</label>
+                                <div class="input-group">
+                                    <span class="input-group-icon"><i class="fas fa-heading"></i></span>
+                                    <input type="text" id="taskTitle" required placeholder="Enter task title">
+                                </div>
+                            </div>
+
+                            <!-- Task Description -->
+                            <div class="form-group">
+                                <label for="taskDescription">Description</label>
+                                <div class="input-group">
+                                    <span class="input-group-icon"><i class="fas fa-align-left"></i></span>
+                                    <textarea id="taskDescription" placeholder="Enter task description"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Due Date -->
+                            <div class="form-group">
+                                <label for="dueDate">Due Date</label>
+                                <div class="input-group">
+                                    <span class="input-group-icon"><i class="fas fa-calendar-alt"></i></span>
+                                    <input type="date" id="dueDate" required>
+                                </div>
+                            </div>
+
+                            <!-- Priority -->
+                            <div class="form-group">
+                                <label for="priority">Priority</label>
+                                <div class="input-group">
+                                    <span class="input-group-icon"><i class="fas fa-exclamation-circle"></i></span>
+                                    <select id="priority" required>
+                                        <option value="">Select Priority</option>
+                                        <option value="low">Low</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="high">High</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Category -->
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <div class="input-group">
+                                    <span class="input-group-icon"><i class="fas fa-tags"></i></span>
+                                    <select id="category" required>
+                                        <option value="">Select Category</option>
+                                        <option value="work">Work</option>
+                                        <option value="personal">Personal</option>
+                                        <option value="study">Study</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Attachments -->
+                            <div class="form-group">
+                                <label for="attachments">Attachments</label>
+                                <div class="input-group">
+                                    <span class="input-group-icon"><i class="fas fa-paperclip"></i></span>
+                                    <input type="file" id="attachments" multiple>
+                                </div>
+                                <small class="form-text">Max file size: 5MB. Allowed types: PDF, PNG, JPG</small>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <div class="input-group">
+                                    <span class="input-group-icon"><i class="fas fa-tag"></i></span>
+                                    <input type="text" id="tags" placeholder="Enter tags separated by commas">
+                                </div>
+                            </div>
+
+                            <!-- Submit Buttons -->
+                            <div class="form-actions">
+                                <button type="submit" class="create-task-button">
+                                    <i class="fas fa-save"></i> Create Task
+                                </button>
+                                <button type="button" class="reset-button" onclick="resetForm()">
+                                    <i class="fas fa-undo"></i> Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/create-task.js"></script>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard-profile.js"></script>
+    <script src="../js/validation.js"></script>
+</body>
+</html>
